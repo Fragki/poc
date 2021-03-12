@@ -11,8 +11,8 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 0, content: {
-            AttributedText(attributedText: t(text: "<h1>bbbbbbccc</h1>"))
-            AttributedText(attributedText: t(text: "<p>bbbbbb<b>ccc</b></p>"))
+            AttributedText(attributedText: getStyledText("<h1>bbbbbbccc</h1>"))
+            AttributedText(attributedText: getStyledText("<p>bbbbbb<b>ccc</b></p>"))
 
             Text("Hello, world!")
                 .padding()
@@ -22,7 +22,7 @@ struct ContentView: View {
 
     }
 
-    func t(text: String) -> NSAttributedString? {
+    func getStyledText(_ text: String) -> NSAttributedString? {
         let colorHex = "000000"
         let htmlCSSString = "<style>" +
             "html *" +
